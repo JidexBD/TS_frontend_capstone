@@ -1,7 +1,27 @@
 :root {
+  --brand-color: #0079ff;
+  --base-color: #f6f8ff;
+  --surface-color: #ffffff;
+  --text-color: #0f2a44;
+  --secondary-text-color: #4b6a9b;
+  --primary-blue: #164baf;
+  --light-blue: #d1e3ff;
+  --light-white: #f2f7ff;
+  --white: #ffffff;
+  --red: #f74646;
 }
 
 .dark-theme {
+  --brand-color: #0079ff;
+  --base-color: #141d2f;
+  --surface-color: #1e2a47;
+  --text-color: #90a4d4;
+  --secondary-text-color: #4b6a9b;
+  --primary-blue: #f0f1f2;
+  --light-blue: #90a4d4;
+  --light-white: #f2f7ff;
+  --white: #ffffff;
+  --red: #f74646;
 }
 
 * {
@@ -15,4 +35,10 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--base-color);
+  color: var(--text-color);
 }
