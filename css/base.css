@@ -1,4 +1,9 @@
 :root {
+  /* font */
+  --fs1: "Inter", sans-serif;
+  --fs2: "Space Mono", sans-serif;
+
+  /* colors */
   --brand-color: #0079ff;
   --base-color: #f6f8ff;
   --surface-color: #ffffff;
