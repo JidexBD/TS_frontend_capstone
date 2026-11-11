@@ -1,92 +1,76 @@
-// html
+const planetImgs = document.querySelector(".planet-img");
 const searchInput = document.querySelector("#input-search");
-
-const searchButton = document.querySelector(".search-btn");
-
-const planetImage = document.querySelector(".planet-img");
-const planetName = document.querySelector(".planet-name");
-const planetType = document.querySelector(".planet-type");
-const planetDescription = document.querySelector(".planet-description");
-
+const searchBtn = document.querySelector(".search-btn");
+const namePlanet = document.querySelector(".planet-name");
+const description = document.querySelector(".planet-description");
+const plaentType = document.querySelector(".planet-type");
 const gravity = document.querySelector(".gravity");
-
 const mass = document.querySelector(".mass-s");
-const period = document.querySelector(".period");
-
+const period = document.querySelector(".period-p");
 const temp = document.querySelector(".temp-num");
-
-const moon = document.querySelector(".half-num");
-
+const moons = document.querySelector(".half-num");
 const diameter = document.querySelector(".diameter-num");
-
 const company = document.querySelector(".comp-num");
+async function fetchData() {
+  console.log(searchInput);
 
-// url
-const url = "https://anurella.github.io/json/planet.json";
+  // the .value error
+  if (!searchInput || typeof searchInput.value !== "string") {
+    console.error("Check that #input-search selects an input element.");
+    return;
+  }
 
-// array to store planet data
+  // geting the planet name when the code runs
+  const planetName = searchInput.value.trim().toLowerCase();
+  // check if input is empty
 
-let planets = [];
+  if (!planetName) {
+    throw new Error("please enter planet name");
+  }
 
-// fetch data
-
-async function getPlanets() {
   try {
-    const response = await fetch(url);
+    const response = await fetch("https://anurella.github.io/json/planet.json");
 
-    //check if request was successful
     if (!response.ok) {
-      throw new Error("Unable to fetch data.");
+      throw new Error("Could not fetch planet data");
     }
 
-    //   convert response to JSON
-    planets = await response.json();
-    console.log(`planets data: ${planets}`);
+    const data = await response.json();
 
-    //   load earth when the application starts
+    // Find the planet entered by the user
+    const planet = data.find((item) => item.name.toLowerCase() === planetName);
 
-    const earth = planets.find(
-      ({ planet }) => planet.name.toLowerCase() === "earth",
-    );
-
-    if (earth) {
-      displayPlanet(earth);
+    // Check whether the planet exists
+    if (!planet) {
+      console.log("Planet not found");
+      planetImgs.removeAttribute("src");
+      return;
     }
-  } catch (error) {
-    console.error("Error fetching planets:", error);
-    planetName.textContent = "Unable to load planets";
-    planetDescription.textContent =
-      "Please check your internet connection and refresh the page.";
+
+    // Display the planet image
+    planetImgs.src = planet.image;
+    planetImgs.alt = planet.name;
+    //planet names
+    namePlanet.textContent = planet.name;
+    //   planet type
+    plaentType.textContent = planet.type;
+    //planet description
+    description.textContent = planet.description;
+
+    //stats
+    gravity.textContent = planet.gravity;
+    mass.textContent = planet.mass;
+    period.textContent = planet.period;
+    //figures
+    temp.textContent = planet.temperature;
+    moons.textContent = planet.moons;
+    diameter.textContent = planet.diameter;
+    company.textContent = planet.distanceFromSun;
+  } catch (e) {
+    console.error(e);
   }
 }
 
-// display planet info
+searchBtn.addEventListener("click", fetchData);
 
-function displayPlanet(planet) {
-  // update planet image
-
-  planetImage.src = planet.image;
-  planetImage.alt = `${planet.name} planet`;
-
-  // info update
-  planetName.textContent = planet.name;
-  planetType.textContent = planet.type;
-  planetDescription.textContent = planet.description;
-
-  // update stat
-  gravity.textContent = `${planet.gravity} m/s²`;
-  mass.textContent = planet.mass;
-  period.textContent = `${planet.period} days`;
-
-  // Update additional figures
-  temp.textContent = `${planet.temperature} K`;
-  moon.textContent = planet.moons;
-  diameter.textContent = `${planet.diameter.toLocaleString()} km`;
-
-  // distance from the sun
-  company.textContent = `${planet.distanceFromSun.toLocaleString()} million km`;
-}
-
-// search for a planet
-
-function searchPlanet() {}
+// the issue is with the api

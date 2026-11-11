@@ -182,6 +182,8 @@ main {
 
 .planet-img {
   border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
 }
 
 .planet-header {
@@ -253,6 +255,11 @@ main {
 
 /* tab */
 @media (min-width: 43em) {
+  .planet-img {
+    border-radius: 50%;
+    width: 10.1rem;
+    height: 10.1rem;
+  }
 }
 
 /*tab landscape*/
@@ -261,6 +268,12 @@ main {
     width: 100%;
     max-width: 90rem;
     margin: 2rem auto 4rem auto;
+  }
+
+  .planet-img {
+    border-radius: 50%;
+    width: 10.1rem;
+    height: 10.1rem;
   }
 
   .planet-description {
