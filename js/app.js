@@ -95,4 +95,6 @@ themeButton.addEventListener("click", () => {
 
   themeText.textContent = isDark ? "LIGHT" : "DARK";
   themeButton.setAttribute("aria-pressed", isDark);
+
+  // need to update theme images
 });
