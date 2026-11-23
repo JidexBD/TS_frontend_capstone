@@ -82,3 +82,17 @@ searchInput.addEventListener("keydown", (e) => {
     fetchData();
   }
 });
+
+// dark theme
+
+const themeButton = document.querySelector(".theme-button");
+const themeText = document.querySelector(".theme-text");
+
+themeButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+
+  const isDark = document.body.classList.contains("dark-theme");
+
+  themeText.textContent = isDark ? "LIGHT" : "DARK";
+  themeButton.setAttribute("aria-pressed", isDark);
+});

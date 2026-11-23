@@ -645,3 +645,17 @@ footer {
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++FOOTER SECTION END++++++++++++++++++++++++++ */
+
+/* Dark mode overrides */
+.dark-theme main {
+  background-color: var(--surface-color);
+}
+
+.dark-theme .planet-name,
+.dark-theme .stat-text {
+  color: var(--text-color);
+}
+
+.dark-theme .statistics {
+  background-color: var(--base-color);
+}
