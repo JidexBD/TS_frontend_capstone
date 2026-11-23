@@ -384,4 +384,176 @@ main {
 /* 1800 */
 @media (min-width: 112em) {
 }
-/* +++++++++++++++++++++++++++++++++++++++++PLANET FACTS SECTION END++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++++++++++++DATA  SECTION ++++++++++++++++++++++++++ */
+.data-section {
+  margin-top: 4rem;
+  margin: 2rem 3.2rem 2rem 2rem;
+}
+
+.data-header {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.5;
+  letter-spacing: -2%;
+  margin-bottom: 3rem;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.planet-table {
+  width: 100%;
+  min-width: 340px;
+  border-collapse: separate;
+  border-spacing: 1px;
+  table-layout: fixed;
+  font-size: 9px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.planet-table th,
+.planet-table td {
+  padding: 12px 3px;
+  overflow-wrap: break-word;
+}
+
+.planet-table thead th {
+  color: white;
+  background: #1b4eae;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.planet-table tbody td {
+  background: #f0f5fd;
+  font-weight: 400;
+}
+
+.planet-table .category {
+  background: #d1e1fb;
+  font-weight: 700;
+}
+
+.planet-table .terrestrial,
+.planet-table .dwarf {
+  background: #d1e1fb;
+}
+
+.planet-table .mass {
+  display: none;
+}
+
+/* Column proportions on small screens */
+.planet-table th:first-child {
+  width: 18%;
+}
+
+.planet-table th:nth-child(2) {
+  width: 17%;
+}
+
+.planet-table td {
+  width: auto;
+}
+
+/* tab */
+@media (min-width: 43em) {
+  .planet-table {
+    font-size: 12px;
+    min-width: 0;
+  }
+
+  .planet-table th,
+  .planet-table td {
+    padding: 15px 8px;
+  }
+
+  .planet-table thead th {
+    font-size: 11px;
+  }
+
+  .planet-table .mass {
+    display: table-cell;
+  }
+
+  .planet-table th:first-child {
+    width: 18%;
+  }
+
+  .planet-table th:nth-child(2) {
+    width: 16%;
+  }
+}
+
+/*tab landscape*/
+@media (min-width: 56em) {
+  .data-section {
+    width: 100%;
+    max-width: 90rem;
+    margin: 2rem auto 4rem auto;
+  }
+
+  .table-container {
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  .planet-table {
+    font-size: 14px;
+  }
+
+  .planet-table th,
+  .planet-table td {
+    padding: 18px 12px;
+  }
+
+  .planet-table thead th {
+    font-size: 12px;
+  }
+
+  .planet-table th:first-child {
+    width: 18%;
+  }
+
+  .planet-table th:nth-child(2) {
+    width: 17%;
+  }
+}
+
+/* 1024 */
+@media (min-width: 75em) {
+  .data-section {
+    width: 100%;
+    max-width: 100rem;
+    margin: 2rem auto 4rem auto;
+  }
+
+  .planet-table {
+    font-size: 15px;
+  }
+
+  .planet-table th,
+  .planet-table td {
+    padding: 20px 16px;
+  }
+
+  .planet-table thead th {
+    font-size: 13px;
+  }
+}
+
+/* 1440 */
+@media (min-width: 90em) {
+}
+
+/* 1800 */
+@media (min-width: 112em) {
+}
+/* +++++++++++++++++++++++++++++++++++++++++DATA SECTION END++++++++++++++++++++++++++ */
