@@ -557,3 +557,91 @@ main {
 @media (min-width: 112em) {
 }
 /* +++++++++++++++++++++++++++++++++++++++++DATA SECTION END++++++++++++++++++++++++++ */
+
+/* +++++++++++++++++++++++++++++++++++++++++FOOTER SECTION ++++++++++++++++++++++++++ */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--secondary-text-color);
+  padding: 2rem;
+}
+
+.left-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.about {
+  font-size: 2rem;
+  line-height: 1.5;
+  letter-spacing: -2%;
+  font-weight: 600;
+}
+
+.fn {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: -2%;
+  font-weight: 600;
+  font-weight: 500;
+}
+
+.right-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fr1,
+.fr2 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+
+.fr1 a:visited,
+.fr2 a:visited {
+  color: var(--secondary-text-color);
+}
+/* tab */
+@media (min-width: 43em) {
+  footer {
+    width: 100%;
+    max-width: 90rem;
+    margin: 2rem auto 4rem auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/*tab landscape*/
+@media (min-width: 56em) {
+  footer {
+    width: 100%;
+    max-width: 90rem;
+    margin: 2rem auto 4rem auto;
+  }
+}
+
+/* 1024 */
+@media (min-width: 75em) {
+  footer {
+    width: 100%;
+    max-width: 100rem;
+    margin: 2rem auto 4rem auto;
+  }
+}
+
+/* 1440 */
+@media (min-width: 90em) {
+}
+
+/* 1800 */
+@media (min-width: 112em) {
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++FOOTER SECTION END++++++++++++++++++++++++++ */
