@@ -68,9 +68,17 @@ async function fetchData() {
     company.textContent = planet.distanceFromSun;
   } catch (e) {
     console.error(e);
+  } finally {
+    searchInput.value = "";
   }
 }
 
 searchBtn.addEventListener("click", fetchData);
 
-// the issue is with the api
+// Enter key
+
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    fetchData();
+  }
+});
