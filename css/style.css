@@ -314,5 +314,74 @@ main {
 /* +++++++++++++++++++++++++++++++++++++++++MAIN SECTION END ++++++++++++++++++++++++++ */
 
 /* ++++++++++++++++++++++++++++++++++++++++ PLANET FACTS SECTION +++++++++++++++++++++++++ */
+.planet-facts {
+  margin-top: 3.2rem;
+  margin: 2rem 3.2rem 2rem 2rem;
+}
 
+.pf-header {
+  font-size: 3.2rem;
+  font-family: var(--fs1);
+  color: var(--primary-blue);
+  line-height: 1.5;
+  letter-spacing: -2%;
+  font-weight: 600;
+
+  margin-bottom: 2.4rem;
+}
+
+.pf-text {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* tab */
+@media (min-width: 43em) {
+  .planet-facts {
+    padding: 2rem;
+    margin-top: 3.2rem;
+    margin: 2rem auto 4rem auto;
+  }
+
+  .pf-text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    text-align: left;
+  }
+}
+
+/*tab landscape*/
+@media (min-width: 56em) {
+  .planet-facts {
+    width: 100%;
+    max-width: 90rem;
+    margin: 2rem auto 4rem auto;
+  }
+}
+
+/* 1024 */
+@media (min-width: 75em) {
+  .planet-facts {
+    width: 100%;
+    max-width: 100rem;
+    margin: 2rem auto 4rem auto;
+  }
+  .pf-text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    text-align: left;
+    max-width: 120%;
+  }
+}
+
+/* 1440 */
+@media (min-width: 90em) {
+}
+
+/* 1800 */
+@media (min-width: 112em) {
+}
 /* +++++++++++++++++++++++++++++++++++++++++PLANET FACTS SECTION END++++++++++++++++++++++++++ */
