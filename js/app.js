@@ -88,6 +88,9 @@ searchInput.addEventListener("keydown", (e) => {
 const themeButton = document.querySelector(".theme-button");
 const themeText = document.querySelector(".theme-text");
 
+const themeIcon = document.querySelector(".theme-icon");
+const logoImg = document.querySelector(".nav-logo-dark");
+
 themeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
 
@@ -96,5 +99,17 @@ themeButton.addEventListener("click", () => {
   themeText.textContent = isDark ? "LIGHT" : "DARK";
   themeButton.setAttribute("aria-pressed", isDark);
 
-  // need to update theme images
+  // logo image
+  logoImg.src = isDark
+    ? "./assets/images/logo.svg"
+    : "./assets/images/logo_black.svg";
+
+  // theme
+  themeIcon.src = isDark
+    ? "./assets/icons/theme-icon-white.svg"
+    : "./assets/icons/ThemeIcon.svg";
+
+  // search input
+
+  // box shadow for the main section
 });
